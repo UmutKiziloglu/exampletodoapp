@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Example Todo App</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+</head>
+<link rel="stylesheet" href="/static/assets/css/style.css">
+</head>
+
+<body class="bg-dark">
+
+  <main class="form-signin border border-primary border-3 rounded">
+    
+    <div class="m-2">
+      <form method="POST" id="myForm">
+        <h1 class="h3 mb-4 fw-normal text-light text-center">Example Todo App</h1>
+        <div class="today h6 mb-4 fw-normal text-light text-center"></div>
+        <div class="input-group mb-3">
+          <input required type="text" class="form-control" name="content" placeholder="Birşeyler Yaz Aq">
+          <button class="btn btn-primary" type="submit"><i class="fad fa-plus fa-lg"></i></button>
+        </div>
+        <hr class="text-light">
+      </form>
+      <ul id="anan" class="list-group text-dark">
+        <% if (todoTasks.length===0) { %>
+          <li
+            class="list-group-item list-group-item-action border border-3 rounded mb-2 text-center fw-bold text-danger">
+            TODO Bulunmamaktadır! </li>
+          <% } else { %>
+            <% todoTasks.forEach(details=> { %>
+              <li
+                class="list-group-item list-group-item-action border border-3 rounded mb-2 d-flex justify-content-between align-items-center text-break">
+                <%= details.content %>
+              <a href="/remove/<%= details._id %>"><span class="badge bg-danger"><i class="fad fa-times fa-2x"></i></a></span>
+            </li>
+           <% }) %>
+          <% } %>
+      </ul>
+    </div>
+
+  </main>
+
+  <footer class="text-light ">
+    <p class="mt-5 mb-3 text-center text-warning">&copy; Umut Kızıloğlu. Tüm Hakları Saklıdır</p>
+  </footer>
+
+  <script src="/static/assets/js/font-awesome.js"></script>
+
+  <script>
+    var todayContainer = document.querySelector(".today");
+
+
+    var d = new Date();
+
+
+    var weekday = new Array(7);
+    weekday[0] = "Sunday 🖖";
+    weekday[1] = "Monday 💪😀";
+    weekday[2] = "Tuesday 😜";
+    weekday[3] = "Wednesday 😌☕️";
+    weekday[4] = "Thursday 🤗";
+    weekday[5] = "Friday 🍻";
+    weekday[6] = "Saturday 😴";
+
+
+    var n = weekday[d.getDay()];
+
+
+    var randomWordArray = Array(
+      "Oh my, it's ",
+      "Whoop, it's ",
+      "Happy ",
+      "Seems it's ",
+      "Awesome, it's ",
+      "Have a nice ",
+      "Happy fabulous ",
+      "Enjoy your "
+    );
+
+    var randomWord =
+      randomWordArray[Math.floor(Math.random() * randomWordArray.length)];
+
+
+    todayContainer.innerHTML = randomWord + n;
+  </script>
+</body>
+
+</html>

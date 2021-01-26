@@ -1,0 +1,28 @@
+{
+  "name": "exampletodoapp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "devStart": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Levyoner/levyonertodo.git"
+  },
+  "author": "ΘΧΨGΞΠ#8930",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Levyoner/levyonertodo/issues"
+  },
+  "homepage": "https://github.com/Levyoner/levyonertodo#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.11.12"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
