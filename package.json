@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Levyoner/levyonertodo.git"
+    "url": "git+https://github.com/UmutKiziloglu/exampletodoapp.git"
   },
   "author": "ΘΧΨGΞΠ#8930",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Levyoner/levyonertodo/issues"
+    "url": "https://github.com/UmutKiziloglu/exampletodoapp/issues"
   },
-  "homepage": "https://github.com/Levyoner/levyonertodo#readme",
+  "homepage": "https://github.com/UmutKiziloglu/exampletodoapp#readme",
   "dependencies": {
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
